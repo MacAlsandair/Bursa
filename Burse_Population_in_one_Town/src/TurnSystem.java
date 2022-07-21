@@ -1,13 +1,15 @@
 
 public class TurnSystem {
-	private static PopCard popCard;
-	
-	static void setterpopCard (PopCard popCard) {
-		TurnSystem.popCard = popCard;
+	private static PullOfTown burseTown;
+
+
+	public static void setBurseTown(PullOfTown burseTown) {
+		TurnSystem.burseTown = burseTown;
 	}
 	
 	public static void nextTurn () {
-		BRSystem.birthRateTurn(popCard);
-		System.out.println(popCard.population);
+		BRSystem.birthRateTurn(burseTown);
+		Console.printPopulation(burseTown);
 	}
+
 }
