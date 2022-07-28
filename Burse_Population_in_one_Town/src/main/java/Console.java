@@ -69,7 +69,7 @@ public class Console implements Runnable {
 		System.out.println("Please, enter an ammount of PopCard");
 		int ammount = sc.nextInt();
 		//System.out.println(ammount);
-		System.out.println("Please, enter a class of PopCard");
+		//System.out.println("Please, enter a class of PopCard");
 		//PopCard popCard = PopCardBuilder.createPopCard(ammount, SocialClass.returnSocialClass(sc.nextLine()));
 		PopCard popCard = PopCardBuilder.createPopCard(ammount, SocialClass.MIDDLE);
 		System.out.println(popCard.toString());
