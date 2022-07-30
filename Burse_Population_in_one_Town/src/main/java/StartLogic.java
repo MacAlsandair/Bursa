@@ -9,7 +9,7 @@ public class StartLogic {
 	}
 	
 	public static void dummyStart () {
-		PopCard popCard1 = new PopCard(100, SocialClass.RICH);
+		PopCardBuilder.createPopCard(100, SocialClass.RICH);
 	}
 	
 
