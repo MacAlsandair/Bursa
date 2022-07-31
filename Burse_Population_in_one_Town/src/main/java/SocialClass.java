@@ -4,9 +4,9 @@ public enum SocialClass {
 	MIDDLE,
 	RICH;
 	
-	public static SocialClass returnSocialClass (String socialClass) {
-		socialClass = socialClass.toUpperCase();
-		SocialClass thisSocialClass = switch (socialClass) {
+	public static SocialClass returnSocialClass (String socialClassString) {
+		socialClassString = socialClassString.toUpperCase();
+		SocialClass thisSocialClass = switch (socialClassString) {
 		case "RICH":
 			yield RICH;
 		case "MIDDLE":

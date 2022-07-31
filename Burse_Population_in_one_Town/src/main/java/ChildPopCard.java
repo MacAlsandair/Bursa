@@ -7,7 +7,7 @@ public class ChildPopCard extends PopCard {
 		super(population, socialClass);
 	}
 	ChildPopCard (int population, PopCard popCard) {
-		super(population, popCard.socialClass);
+		super(population, popCard.getSocialClass());
 		this.parent = popCard;
 	}
 
