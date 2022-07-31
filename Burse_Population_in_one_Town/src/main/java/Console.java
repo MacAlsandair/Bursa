@@ -1,4 +1,5 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Console implements Runnable {
@@ -38,25 +39,53 @@ public class Console implements Runnable {
 			String i = sc.nextLine();
 			switch (i) {
 			case "y":
-				System.out.println("New turn");
-				TurnSystem.nextTurn();
+				Console.newTurn();
 				break;
 			case "t":
-				System.out.println("Please, write an interval");
-				int interval = sc.nextInt();
-				TimerForTurn.startATimer(interval);
+				Console.newTimer(sc);
 				break;
 			case "ts":
-				TimerForTurn.stopATimer();
+				Console.stopTimer();
 				break;
 			case "newCard":
 				this.newPopCardCommand(sc);
 				break;
 			default:
+				System.out.println("You write illegal command");
 				break;
 			}
 		}
 				
+	}
+	
+	// there we refactor the comsole commands
+	public static void newTurn () {
+		System.out.println("New turn");
+		TurnSystem.nextTurn();
+	}
+	
+	public static void stopTimer () {
+		try {
+			TimerForTurn.stopATimer();
+		}
+		catch (NullPointerException e) {
+			e.getMessage();
+			System.out.println("Timer doesn't exist. Please, firstly create a timer");
+		}
+	}
+	
+	public static void newTimer (Scanner sc) {
+		System.out.println("Please, write an interval");
+		int interval;
+		try {
+			interval = sc.nextInt();
+			TimerForTurn.startATimer(interval);
+		}
+		catch (InputMismatchException e) {
+			//System.out.println(e.getMessage());
+			System.out.println("You tried to put an invalid argument as an interval");
+			System.out.println("Please, write a number as an argument");
+		}
 	}
 	
 	public static void printPopulation (PullOfTown burseTown) {
@@ -67,7 +96,16 @@ public class Console implements Runnable {
 	
 	public void newPopCardCommand (Scanner sc) {
 		System.out.println("Please, enter an ammount of PopCard");
-		int ammount = sc.nextInt();
+		int ammount;
+		try {
+			ammount = sc.nextInt();
+		}
+		catch (InputMismatchException e) {
+			ammount = 100;
+			e.getMessage();
+			System.out.println("You have written an invalid argument");
+		}
+		
 		//System.out.println(ammount);
 		//System.out.println("Please, enter a class of PopCard");
 		//PopCard popCard = PopCardBuilder.createPopCard(ammount, SocialClass.returnSocialClass(sc.nextLine()));

@@ -3,4 +3,13 @@
   <groupId>com.alsandair.mac</groupId>
   <artifactId>burse-population-in-one-town</artifactId>
   <version>0.0.3-SNAPSHOT</version>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.logging.log4j</groupId>
+  		<artifactId>log4j-slf4j-impl</artifactId>
+  		<version>2.14.0</version>
+  	</dependency>
+  </dependencies>
+  
 </project>
