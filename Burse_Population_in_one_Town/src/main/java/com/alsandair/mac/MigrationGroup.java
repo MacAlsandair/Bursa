@@ -1,3 +1,4 @@
+package com.alsandair.mac;
 
 public class MigrationGroup extends PopCard {
 	private int ammount;

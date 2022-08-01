@@ -1,3 +1,4 @@
+package com.alsandair.mac;
 import java.util.ArrayList;
 
 public class PullOfTown {

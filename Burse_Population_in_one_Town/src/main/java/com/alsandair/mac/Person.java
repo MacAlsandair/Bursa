@@ -1,3 +1,4 @@
+package com.alsandair.mac;
 
 public class Person {
 	private int dna;

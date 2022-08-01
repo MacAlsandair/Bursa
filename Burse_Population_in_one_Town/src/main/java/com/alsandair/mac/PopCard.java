@@ -1,3 +1,4 @@
+package com.alsandair.mac;
 public class PopCard {
 	private int population;
 	private SocialClass socialClass;

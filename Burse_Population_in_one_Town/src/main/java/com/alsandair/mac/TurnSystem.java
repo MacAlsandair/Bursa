@@ -1,3 +1,4 @@
+package com.alsandair.mac;
 
 public class TurnSystem {
 	private static PullOfTown burseTown;

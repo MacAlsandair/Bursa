@@ -1,3 +1,4 @@
+package com.alsandair.mac;
 
 public enum SocialClass {
 	POOR,

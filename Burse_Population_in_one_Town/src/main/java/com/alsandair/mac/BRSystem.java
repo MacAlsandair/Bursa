@@ -1,3 +1,4 @@
+package com.alsandair.mac;
 //BirthRateSystem
 public class BRSystem {
 	private static double birthRate = 1.02;

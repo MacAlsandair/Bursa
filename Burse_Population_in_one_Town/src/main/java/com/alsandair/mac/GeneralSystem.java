@@ -1,3 +1,4 @@
+package com.alsandair.mac;
 import org.slf4j.*;
 
 public class GeneralSystem {
