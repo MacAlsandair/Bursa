@@ -2,13 +2,23 @@ package com.alsandair.mac;
 import java.util.ArrayList;
 
 public class PullOfTown {
-	ArrayList <PopCard> PopCardPull;
+	private ArrayList <PopCard> pullOfTownArray;
 	
 	
 	public PullOfTown () {
-		this.PopCardPull = new ArrayList <PopCard> ();
+		this.setPullOfTownArray(new ArrayList <PopCard> ());
 	}
-	
+
+
+	public ArrayList <PopCard> getPullOfTownArray() {
+		return pullOfTownArray;
+	}
+
+
+	public void setPullOfTownArray(ArrayList <PopCard> pullOfTown) {
+		this.pullOfTownArray = pullOfTown;
+	}
+
 	
 	
 }

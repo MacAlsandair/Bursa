@@ -95,8 +95,8 @@ public class Console implements Runnable {
 	}
 	
 	public static void printPopulation (PullOfTown burseTown) {
-		for (int i = 0; i<burseTown.PopCardPull.size(); i++) {
-			log.info("{}", burseTown.PopCardPull.get(i).getPopulation());
+		for (int i = 0; i<burseTown.getPullOfTownArray().size(); i++) {
+			log.info("{}", burseTown.getPullOfTownArray().get(i).getPopulation());
 		}
 	}
 	

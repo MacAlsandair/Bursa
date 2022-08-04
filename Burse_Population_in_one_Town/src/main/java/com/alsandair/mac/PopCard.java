@@ -8,7 +8,7 @@ public class PopCard {
 	PopCard(int population, SocialClass socialClass) {
 		this.population = population;
 		this.socialClass = socialClass;
-		pullOfTown.PopCardPull.add(this);
+		pullOfTown.getPullOfTownArray().add(this);
 	}
 
 	public boolean hasChild () {

@@ -3,9 +3,9 @@ package com.alsandair.mac;
 public class StartLogic {
 	
 	public static void startLogic () {
-		PullOfTown burseTown = new PullOfTown ();
-		PopCard.setBurseTown(burseTown);
-		TurnSystem.setBurseTown(burseTown);
+		PullOfTown pullOfTown = new PullOfTown ();
+		PopCard.setBurseTown(pullOfTown);
+		TurnSystem.setBurseTown(pullOfTown);
 		StartLogic.dummyStart();
 	}
 	
