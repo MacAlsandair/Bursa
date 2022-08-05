@@ -1,15 +1,21 @@
 package com.alsandair.mac;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+//@Component
 public class PopCard {
 	private int population;
 	private SocialClass socialClass;
-	private static PullOfTown pullOfTown;
+	private Town town;
 	private ChildPopCard child;
 
-	PopCard(int population, SocialClass socialClass) {
+	PopCard(int population, SocialClass socialClass, Town town) {
 		this.population = population;
 		this.socialClass = socialClass;
-		pullOfTown.getPullOfTownArray().add(this);
-	}
+		this.town = town;
+		this.town.getPullOfPopCards().add(this);
+		}
 
 	public boolean hasChild () {
 		if (child != null) {
@@ -19,10 +25,6 @@ public class PopCard {
 	}
 
 
-
-	public static void setBurseTown(PullOfTown pullOfTown1) {
-		pullOfTown = pullOfTown1;
-	}
 
 
 
@@ -55,6 +57,14 @@ public class PopCard {
 
 	public void setChild(ChildPopCard child) {
 		this.child = child;
+	}
+
+	public Town getTown() {
+		return town;
+	}
+
+	public void setTown(Town town) {
+		this.town = town;
 	}
 
 

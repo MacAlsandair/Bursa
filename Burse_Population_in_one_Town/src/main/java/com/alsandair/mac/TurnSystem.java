@@ -1,16 +1,24 @@
 package com.alsandair.mac;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class TurnSystem {
-	private static PullOfTown burseTown;
+	private static Town town;
+	private static final Logger log = LoggerFactory.getLogger(GeneralSystem.class);
 
 
-	public static void setBurseTown(PullOfTown burseTown) {
-		TurnSystem.burseTown = burseTown;
+	public static void setBurseTown(Town town) {
+		TurnSystem.town = town;
 	}
 	
 	public static void nextTurn () {
-		BRSystem.birthRateTurn(burseTown);
-		Console.printPopulation(burseTown);
+
+		BRSystem.birthRateTurn();
+
+		Console.printPopulation(town);
+		
+		log.trace("Logic of new turn be delivered");
 	}
 
 }

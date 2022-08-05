@@ -94,9 +94,9 @@ public class Console implements Runnable {
 		}
 	}
 	
-	public static void printPopulation (PullOfTown burseTown) {
-		for (int i = 0; i<burseTown.getPullOfTownArray().size(); i++) {
-			log.info("{}", burseTown.getPullOfTownArray().get(i).getPopulation());
+	public static void printPopulation (Town burseTown) {
+		for (int i = 0; i<burseTown.getPullOfPopCards().size(); i++) {
+			log.info("{}", burseTown.getPullOfPopCards().get(i).getPopulation());
 		}
 	}
 	
@@ -115,8 +115,8 @@ public class Console implements Runnable {
 		//System.out.println(ammount);
 		//System.out.println("Please, enter a class of PopCard");
 		//PopCard popCard = PopCardBuilder.createPopCard(ammount, SocialClass.returnSocialClass(sc.nextLine()));
-		PopCard popCard = PopCardBuilder.createPopCard(ammount, SocialClass.MIDDLE);
-		log.info("{}", popCard.toString());
+		//PopCard popCard = PopCardBuilder.createPopCard(ammount, SocialClass.MIDDLE, @Autowired Town town);
+		//log.info("{}", popCard.toString());
 		
 	}
 
