@@ -10,8 +10,4 @@ public class BirthRateTest {
 		BRSystem.birthRateTurn();
 	}
 	
-	@Test
-	public void testBirthRateTurn () {
-		PopCardBuilder.createPopCard(123, SocialClass.MIDDLE, )
-	}
 }

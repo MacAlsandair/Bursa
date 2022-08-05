@@ -1,15 +1,18 @@
 package com.alsandair.mac;
 import java.util.ArrayList;
 
-public class Town {
+public class Town implements Locality {
 	private ArrayList <PopCard> pullOfPopCards;
-	private static ArrayList <Town> pullOfTowns;
+	private static ArrayList <Town> pullOfTowns = new ArrayList<> ();
 	
 	
 	public Town () {
 		this.setPullOfPopCards(new ArrayList <PopCard> ());
+		Town.getPullOfTowns().add(this);
 		
 	}
+	
+	
 
 
 	public ArrayList <PopCard> getPullOfPopCards() {
@@ -29,6 +32,14 @@ public class Town {
 
 	public static void setPullOfTowns(ArrayList <Town> pullOfTowns) {
 		Town.pullOfTowns = pullOfTowns;
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "Town [pullOfPopCards=" + pullOfPopCards + "]";
 	}
 
 	

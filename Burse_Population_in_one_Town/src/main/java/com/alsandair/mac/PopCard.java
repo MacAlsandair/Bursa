@@ -9,7 +9,7 @@ public class PopCard {
 	private SocialClass socialClass;
 	private Town town;
 	private ChildPopCard child;
-
+	
 	PopCard(int population, SocialClass socialClass, Town town) {
 		this.population = population;
 		this.socialClass = socialClass;

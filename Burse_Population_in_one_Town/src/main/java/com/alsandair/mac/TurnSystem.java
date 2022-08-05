@@ -8,7 +8,7 @@ public class TurnSystem {
 	private static final Logger log = LoggerFactory.getLogger(GeneralSystem.class);
 
 
-	public static void setBurseTown(Town town) {
+	public static void setTown(Town town) {
 		TurnSystem.town = town;
 	}
 	

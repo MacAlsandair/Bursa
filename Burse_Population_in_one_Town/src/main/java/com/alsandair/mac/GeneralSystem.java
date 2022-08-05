@@ -12,26 +12,29 @@ public class GeneralSystem {
 	public static void main (String [] args) {
 		
 
-		log.info("the class {} is started", GeneralSystem.class);
-		log.error("В программе возникла ошибка!");
+		log.info("The program is started");
 		
-		GeneralSystem.startLogic();
-		Console console = new Console ();
-		Thread threadConsole = new Thread(console);
-		threadConsole.start();
-	}
-	
-	public static void startLogic () {
+		log.debug("Creating a Context");
+		@SuppressWarnings("resource")
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(MyApplicationContextConfiguration.class);
-		Town town = new Town ();
+		//Town town = new Town ();
 		//PopCard.setBurseTown(ctx.getBean(Town.class));
 		//TurnSystem.setBurseTown(ctx.getBean(Town.class));
-		TurnSystem.setBurseTown(town);
-		GeneralSystem.dummyStart();
+		TurnSystem.setTown(ctx.getBean(Town.class));
+		//GeneralSystem.dummyStart();
+		
+		//GeneralSystem.startLogic();
+		//log.info("Creating a console");
+		log.debug("Creating a thread for the console");
+		Thread threadConsole = new Thread(ctx.getBean(Console.class));
+		threadConsole.start();
+		log.debug("Thread is started");
+		PopCardBuilder.createPopCard(100, SocialClass.RICH, ctx.getBean(Town.class));
 	}
 	
-	public static void dummyStart () {
-		PopCardBuilder.createPopCard(100, SocialClass.RICH, new Town() );
-	}
+	//public static void startLogic () {
+
+	//}
+	
 
 }

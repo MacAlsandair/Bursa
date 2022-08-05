@@ -14,4 +14,10 @@ public class MyApplicationContextConfiguration {
 	public Town town() {
 		return new Town();
 	}
+	
+	@Bean 
+	@Scope("singleton")
+	public Console console() {
+		return new Console();
+	}
 }
