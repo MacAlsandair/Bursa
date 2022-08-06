@@ -1,10 +1,11 @@
+package com.alsandair.mac;
 
 public class MigrationGroup extends PopCard {
 	private int ammount;
 	private SocialClass socialClass;
 	
-	public MigrationGroup(int ammount, SocialClass socialClass) {
-		super(ammount, socialClass);
+	public MigrationGroup(int ammount, SocialClass socialClass, Town town) {
+		super(ammount, socialClass, town);
 		this.ammount = ammount;
 		this.socialClass = socialClass;
 	}
