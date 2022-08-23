@@ -2,23 +2,35 @@ package com.alsandair.mac;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
-public class TurnSystem {
-	private static Town town;
-	private static final Logger log = LoggerFactory.getLogger(GeneralSystem.class);
+@Service
+public class TurnSystem implements Turn {
+	private Town town;
+	private static final Logger log = LoggerFactory.getLogger(TurnSystem.class);
+	BirthRateTurn birthRateTurn;
 
 
-	public static void setTown(Town town) {
-		TurnSystem.town = town;
+//	public static void setTown(Town town) {
+//		TurnSystem.town = town;
+//	}
+	
+	public TurnSystem (Town town, BirthRateTurn birthRateTurn) {
+		this.town = town;
+		this.birthRateTurn = birthRateTurn;
 	}
 	
-	public static void nextTurn () {
+	public void nextTurn () {
 
-		BRSystem.birthRateTurn();
+		birthRateTurn.birthRateTurn();
 
-		Console.printPopulation(town);
 		
-		log.trace("Logic of new turn be delivered");
+		//Console.printPopulation(town);
+		
+		town.getPullOfPopCards().stream().forEach((x) -> log.debug("{}", x));
+		
+		
+		log.debug("Logic of new turn is delivered");
 	}
 
 }

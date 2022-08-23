@@ -11,16 +11,20 @@ public class GeneralSystem {
 	
 	public static void main (String [] args) {
 		
-
 		log.info("The program is started");
 		
+		
 		log.debug("Creating a Context");
+		
 		@SuppressWarnings("resource")
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(MyApplicationContextConfiguration.class);
+		
 		//Town town = new Town ();
 		//PopCard.setBurseTown(ctx.getBean(Town.class));
 		//TurnSystem.setBurseTown(ctx.getBean(Town.class));
-		TurnSystem.setTown(ctx.getBean(Town.class));
+		
+		//TurnSystem.setTown(ctx.getBean(Town.class));
+		
 		//GeneralSystem.dummyStart();
 		
 		//GeneralSystem.startLogic();

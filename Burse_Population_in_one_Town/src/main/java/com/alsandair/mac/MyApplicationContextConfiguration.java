@@ -17,7 +17,19 @@ public class MyApplicationContextConfiguration {
 	
 	@Bean 
 	@Scope("singleton")
-	public Console console() {
-		return new Console();
+	public Console console(Turn turn, TurnTimer turnTimer) {
+		return new Console(turn, turnTimer);
 	}
+	
+	@Bean
+	@Scope("singleton")
+	public Turn turn (Town town, BirthRateTurn birthRateTurn) {
+		return new TurnSystem(town, birthRateTurn);
+	}
+	
+	@Bean
+	public SimpleTurnTimer simpleTurnTimer(Turn turn) {
+		return new SimpleTurnTimer(turn);
+	}
+	
 }

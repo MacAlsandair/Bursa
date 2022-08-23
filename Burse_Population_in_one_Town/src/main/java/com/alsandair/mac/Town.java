@@ -1,6 +1,9 @@
 package com.alsandair.mac;
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Town implements Locality {
 	private ArrayList <PopCard> pullOfPopCards;
 	private static ArrayList <Town> pullOfTowns = new ArrayList<> ();

@@ -9,8 +9,13 @@ import org.slf4j.LoggerFactory;
 public class Console implements Runnable {
 	
 	private static final Logger log = LoggerFactory.getLogger(Console.class);
+	
+	Turn turn;
+	TurnTimer turnTimer;
 
-	Console () {
+	Console (Turn turn, TurnTimer turnTimer) {
+		this.turn = turn;
+		this.turnTimer = turnTimer;
 	}
 	
 	@Override
@@ -45,16 +50,16 @@ public class Console implements Runnable {
 			String i = sc.nextLine();
 			switch (i) {
 			case "y":
-				Console.newTurn();
+				newTurn();
 				break;
 			case "t":
-				Console.newTimer(sc);
+				newTimer(sc);
 				break;
 			case "ts":
-				Console.stopTimer();
+				stopTimer();
 				break;
 			case "newCard":
-				this.newPopCardCommand(sc);
+				newPopCardCommand(sc);
 				break;
 			default:
 				log.warn("You write illegal command");
@@ -65,14 +70,14 @@ public class Console implements Runnable {
 	}
 	
 	// there we refactor the comsole commands
-	public static void newTurn () {
+	public void newTurn () {
 		log.info("New turn");
-		TurnSystem.nextTurn();
+		turn.nextTurn();
 	}
 	
-	public static void stopTimer () {
+	public void stopTimer () {
 		try {
-			TimerForTurn.stopATimer();
+			turnTimer.stopATimer();
 		}
 		catch (NullPointerException e) {
 			e.getMessage();
@@ -80,12 +85,13 @@ public class Console implements Runnable {
 		}
 	}
 	
-	public static void newTimer (Scanner sc) {
+	public void newTimer (Scanner sc) {
 		log.info("Please, write an interval");
 		int interval;
 		try {
 			interval = sc.nextInt();
-			TimerForTurn.startATimer(interval);
+			sc.nextLine();
+			turnTimer.startATimer(interval);
 		}
 		catch (InputMismatchException e) {
 			//System.out.println(e.getMessage());
@@ -94,7 +100,7 @@ public class Console implements Runnable {
 		}
 	}
 	
-	public static void printPopulation (Town burseTown) {
+	public void printPopulation (Town burseTown) {
 		for (int i = 0; i<burseTown.getPullOfPopCards().size(); i++) {
 			log.info("{}", burseTown.getPullOfPopCards().get(i).getPopulation());
 		}
@@ -105,6 +111,8 @@ public class Console implements Runnable {
 		int ammount;
 		try {
 			ammount = sc.nextInt();
+			sc.nextLine();
+			log.debug("The ammount is {}", ammount);
 		}
 		catch (InputMismatchException e) {
 			ammount = 100;
@@ -113,10 +121,23 @@ public class Console implements Runnable {
 		}
 		
 		//System.out.println(ammount);
-		//System.out.println("Please, enter a class of PopCard");
+		log.info("Please, enter a class of PopCard");
+		String socialClassString;
+		try {
+			socialClassString = sc.nextLine();
+		} catch (InputMismatchException e) {
+			// TODO Auto-generated catch block
+			log.warn("You write illegal class");
+			e.printStackTrace();
+			socialClassString = "poor";
+		}
+		
+		//I don't know, how to inject any town into the 
+		PopCardBuilder.createPopCard(ammount, SocialClass.returnSocialClass(socialClassString), StaticRandomizer.getRandomTown());
+		
 		//PopCard popCard = PopCardBuilder.createPopCard(ammount, SocialClass.returnSocialClass(sc.nextLine()));
 		//PopCard popCard = PopCardBuilder.createPopCard(ammount, SocialClass.MIDDLE, @Autowired Town town);
-		//log.info("{}", popCard.toString());
+		log.info("{}, {}, {}", ammount, SocialClass.returnSocialClass(socialClassString), StaticRandomizer.getRandomTown());
 		
 	}
 
