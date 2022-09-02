@@ -7,6 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.macalsandair.MyApplicationContextConfiguration;
+import com.macalsandair.State;
+import com.macalsandair.Town;
+
 public class MyApplicationContextConfigurationTest {
 
 	private static final Logger log = LoggerFactory.getLogger(MyApplicationContextConfigurationTest.class);

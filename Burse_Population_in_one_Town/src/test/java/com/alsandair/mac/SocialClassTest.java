@@ -3,6 +3,8 @@ package com.alsandair.mac;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import com.macalsandair.SocialClass;
+
 public class SocialClassTest {
 	
 	@Test
