@@ -1,5 +1,7 @@
 package com.macalsandair;
 
+import com.macalsandair.models.Town;
+
 public interface BirthRateTurn {
 
 	void birthRateTurn();

@@ -1,5 +1,9 @@
 package com.macalsandair;
 
+import com.macalsandair.models.ChildPopCard;
+import com.macalsandair.models.PopCard;
+import com.macalsandair.models.Town;
+
 public class PopCardBuilder {
 
 	public static PopCard createPopCard (int ammount, SocialClass socialClass, Town town) {

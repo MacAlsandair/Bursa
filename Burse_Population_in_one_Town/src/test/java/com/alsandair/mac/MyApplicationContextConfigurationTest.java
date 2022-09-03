@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.macalsandair.MyApplicationContextConfiguration;
 import com.macalsandair.State;
-import com.macalsandair.Town;
+import com.macalsandair.models.Town;
 
 public class MyApplicationContextConfigurationTest {
 

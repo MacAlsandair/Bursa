@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @SpringBootApplication
 public class SocialBurseApplication {
 	
-	//private static final Logger log = LoggerFactory.getLogger(SocialBurseApplication.class);
+	private static final Logger log = LoggerFactory.getLogger(SocialBurseApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(SocialBurseApplication.class, args);

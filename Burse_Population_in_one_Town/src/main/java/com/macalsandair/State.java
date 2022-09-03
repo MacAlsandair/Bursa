@@ -2,6 +2,8 @@ package com.macalsandair;
 
 import org.springframework.stereotype.Component;
 
+import com.macalsandair.models.Town;
+
 //@Component
 public class State {
 	Town capital;

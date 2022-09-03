@@ -2,6 +2,8 @@ package com.macalsandair;
 
 import org.springframework.stereotype.Service;
 
+import com.macalsandair.models.Town;
+
 @Service
 public class StaticRandomizer {
 	private static Town town;

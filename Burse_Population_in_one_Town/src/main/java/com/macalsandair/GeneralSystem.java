@@ -3,6 +3,8 @@ import org.slf4j.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+//it is a rudiment class. now the main class is SocialBurseApplication
+
 public class GeneralSystem {
 	
 	//create a logger

@@ -5,7 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-@Configuration
+
+//It is a rudiment class, which conflicts with Spring boot< which has its own Application contex configuration
+//@Configuration
 //@ComponentScan
 public class MyApplicationContextConfiguration {
 

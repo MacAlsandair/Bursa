@@ -6,6 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import com.macalsandair.models.PopCard;
+import com.macalsandair.models.Town;
+
 //BirthRateSystem
 @Service
 public class BirthSystem implements BirthRateTurn {

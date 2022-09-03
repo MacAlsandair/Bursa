@@ -5,7 +5,11 @@ import java.util.Scanner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
+import com.macalsandair.models.Town;
+
+@Service
 public class Console implements Runnable {
 	
 	private static final Logger log = LoggerFactory.getLogger(Console.class);

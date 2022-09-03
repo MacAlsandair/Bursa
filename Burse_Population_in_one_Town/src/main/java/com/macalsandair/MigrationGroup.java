@@ -1,5 +1,8 @@
 package com.macalsandair;
 
+import com.macalsandair.models.PopCard;
+import com.macalsandair.models.Town;
+
 public class MigrationGroup extends PopCard {
 	private int ammount;
 	private SocialClass socialClass;
