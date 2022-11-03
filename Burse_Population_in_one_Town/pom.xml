@@ -14,7 +14,7 @@
 	<name>social-burse</name>
 	<description>Social part of the burse project</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -44,11 +44,6 @@
       <scope>runtime</scope>
     </dependency>
 		
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.18.0</version>
-		</dependency>
 	</dependencies>
 
 	<build>
